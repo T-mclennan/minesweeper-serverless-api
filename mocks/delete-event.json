@@ -1,0 +1,11 @@
+{
+  "pathParameters": {
+    "username": "steven R",
+    "score": 15
+  },
+  "requestContext": {
+    "identity": {
+      "cognitoIdentityId": "USER-SUB-1234"
+    }
+  }
+}

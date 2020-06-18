@@ -73,3 +73,15 @@ functions:
           method: get
           cors: true
           authorizer: aws_iam
+
+    # Defines an HTTP API endpoint that calls the main function in delete.js
+    # - path: url path is /score/{username}/{score}
+    # - method: DELETE request
+  delete:
+    handler: delete.main
+    events:
+      - http:
+          path: scores/{username}/{score}
+          method: delete
+          cors: true
+          authorizer: aws_iam
