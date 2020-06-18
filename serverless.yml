@@ -49,3 +49,27 @@ functions:
           method: post
           cors: true
           authorizer: aws_iam
+
+    # Defines an HTTP API endpoint that calls the main function in get.js
+    # - path: url path is /scores/{username}
+    # - method: GET request
+  get:
+    handler: get.main
+    events:
+      - http:
+          path: scores/{username}
+          method: get
+          cors: true
+          authorizer: aws_iam
+
+    # Defines an HTTP API endpoint that calls the main function in list.js
+    # - path: url path is /scores
+    # - method: GET request
+  list:
+    handler: list.main
+    events:
+      - http:
+          path: scores
+          method: get
+          cors: true
+          authorizer: aws_iam
